@@ -53,3 +53,4 @@ See `ARCHITECTURE.md` for full deployment topology and free-tier honesty rules.
 ## Production Readiness
 
 See `RUNTIME_VERIFICATION_REPORT.md` — SelfHosted **VERIFIED**, Container **BLOCKED** on non-Docker host (honest), else **VERIFIED** with `--memory=512m`.
+v2 2026-09-03T15:14:15.1878565-04:00
