@@ -15,6 +15,5 @@
         { "key": "X-Frame-Options", "value": "DENY" }
       ]
     }
-  ],
-  "notes": "Vercel is FRONTEND ONLY. No Minecraft bot processes, no persistent workers, no background jobs. Execution layer is independent."
+  ]
 }
