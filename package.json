@@ -1,0 +1,27 @@
+{
+  "name": "minecraft-247-bot-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Free-tier multi-hosting Minecraft 24/7 Bot Platform - ExecutionProvider architecture",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "build": "npm run build --workspaces",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "tsx": "^4.16.2"
+  },
+  "dependencies": {
+    "minecraft-protocol": "^1.54.0",
+    "mineflayer": "^4.25.0"
+  }
+}

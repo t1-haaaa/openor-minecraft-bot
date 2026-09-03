@@ -1,0 +1,14 @@
+node_modules
+dist
+.next
+.env
+.env.local
+.env.production
+*.log
+coverage
+.supabase
+wrangler
+data/
+.opencode/
+*.tgz
+.vercel/

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@execution/*": ["packages/execution-provider/src/*"],
+      "@database/*": ["packages/database/src/*"],
+      "@storage/*": ["packages/storage/src/*"],
+      "@realtime/*": ["packages/realtime/src/*"],
+      "@resource-governor/*": ["packages/resource-governor/src/*"],
+      "@provider-health/*": ["packages/provider-health/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "apps/web/.next"]
+}

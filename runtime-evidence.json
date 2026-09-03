@@ -1,0 +1,446 @@
+[
+  {
+    "title": "STEP1-START",
+    "provider": "self-hosted",
+    "pid": 9112,
+    "startTime": "2026-09-03T17:27:12.465Z",
+    "botId": "audit_1788456432465",
+    "at": "2026-09-03T17:27:12.471Z"
+  },
+  {
+    "title": "STEP1-BROWSER-DISCONNECT-SURVIVES",
+    "pid": 9112,
+    "status": "running",
+    "at": "2026-09-03T17:27:14.486Z"
+  },
+  {
+    "title": "STEP1-RESTART",
+    "oldPid": 9112,
+    "newPid": 5604,
+    "freshStatus": "running",
+    "exitCode": "0 (graceful SIGTERM)",
+    "at": "2026-09-03T17:27:15.098Z"
+  },
+  {
+    "title": "STEP1-CRASH-DETECTION",
+    "botId": "crash_1788456435098",
+    "pid": 5316,
+    "status": "crashed",
+    "lastError": "exit code null signal SIGKILL",
+    "at": "2026-09-03T17:27:15.902Z"
+  },
+  {
+    "title": "STEP1-STOP-CLEANUP",
+    "botId": "audit_1788456432465",
+    "finalStatus": "stopped",
+    "at": "2026-09-03T17:27:16.717Z"
+  },
+  {
+    "title": "CONTAINER-STUB-AUDIT",
+    "id": "container",
+    "isStub": true,
+    "wouldRun": "docker run --memory=512m ...",
+    "at": "2026-09-03T17:27:16.717Z"
+  },
+  {
+    "title": "REMOTE-VPS-STUB-AUDIT",
+    "id": "remote-vps",
+    "isStub": true,
+    "at": "2026-09-03T17:27:16.718Z"
+  },
+  {
+    "title": "UNSUITABLE-vercel",
+    "error": "Provider Vercel (NOT for bots) unsuitable for 24/7: Vercel is serverless/edge frontend only - no persistent process",
+    "supports247": false,
+    "at": "2026-09-03T17:27:16.718Z"
+  },
+  {
+    "title": "UNSUITABLE-cloudflare-workers",
+    "error": "Provider Cloudflare Workers (NOT for bots) unsuitable for 24/7: Workers Free 10ms CPU cannot run persistent Minecraft process",
+    "supports247": false,
+    "at": "2026-09-03T17:27:16.718Z"
+  },
+  {
+    "title": "UNSUITABLE-render-free",
+    "error": "Provider Render Free (ephemeral) unsuitable for 24/7: Render Free may spin down after 15m without inbound traffic - not for 24/7",
+    "supports247": false,
+    "at": "2026-09-03T17:27:16.718Z"
+  },
+  {
+    "title": "UNSUITABLE-koyeb-free",
+    "error": "Provider Koyeb Free (scales to zero) unsuitable for 24/7: Koyeb Free scales to zero after 1h without traffic",
+    "supports247": false,
+    "at": "2026-09-03T17:27:16.719Z"
+  },
+  {
+    "title": "UNSUITABLE-supabase",
+    "error": "Provider Supabase (NOT for bots) unsuitable for 24/7: Supabase cannot run Minecraft processes",
+    "supports247": false,
+    "at": "2026-09-03T17:27:16.719Z"
+  },
+  {
+    "title": "STEP2-CHOSEN",
+    "chosen": "self-hosted",
+    "dockerAvailable": false,
+    "reason": "SelfHostedRunner is only provider with real process.spawn, ContainerRunner is stub without Docker",
+    "at": "2026-09-03T17:27:16.726Z"
+  },
+  {
+    "title": "STEP3-MINECRAFT-CONNECTION",
+    "provider": "self-hosted",
+    "pid": 7204,
+    "startTime": "2026-09-03T17:27:17.325Z",
+    "port": 25874,
+    "serverLoginEvents": [
+      {
+        "username": "runtimeBot_321",
+        "at": "2026-09-03T17:27:18.286Z"
+      }
+    ],
+    "stdoutSnippet": "[heartbeat] bot alive\n",
+    "stderrSnippet": "",
+    "connected": true,
+    "at": "2026-09-03T17:27:23.339Z"
+  },
+  {
+    "title": "STEP3-PERSISTED-STATUS",
+    "botRow": {
+      "id": "mineflayer-test",
+      "user_id": "user1",
+      "server_host": "127.0.0.1",
+      "server_port": 25874,
+      "username": "runtimeBot",
+      "provider_id": "self-hosted",
+      "status": "running",
+      "config_ref": "vault:mineflayer-test",
+      "created_at": "2026-09-03T17:27:25.353Z",
+      "updated_at": "2026-09-03T17:27:25.353Z"
+    },
+    "historyLength": 1,
+    "stillRunning": true,
+    "at": "2026-09-03T17:27:26.364Z"
+  },
+  {
+    "title": "STEP3-STOP",
+    "pid": 7204,
+    "exitCode": null,
+    "stopTime": "2026-09-03T17:27:27.566Z",
+    "stdoutLines": 2,
+    "at": "2026-09-03T17:27:27.566Z"
+  },
+  {
+    "title": "STEP4-BROWSER-DISCONNECT",
+    "botId": "disconnect_1788456447567",
+    "pid": 5828,
+    "status": "running",
+    "eventsCaptured": 1,
+    "at": "2026-09-03T17:27:29.186Z"
+  },
+  {
+    "title": "STEP4-RECONNECT-REPLAY",
+    "replayedCount": 1,
+    "at": "2026-09-03T17:27:29.390Z"
+  },
+  {
+    "title": "STEP5-CRASH-RECOVERY",
+    "beforePid": 6968,
+    "afterPid": 7260,
+    "detectedStatus": "stopped",
+    "recoveredStatus": "running",
+    "exitCode": "exit code null signal SIGKILL",
+    "recoveryTimeMs": 900,
+    "at": "2026-09-03T17:27:30.915Z"
+  },
+  {
+    "title": "STEP5-AUDIT-EVENT",
+    "event": "crash_recovery created",
+    "at": "2026-09-03T17:27:30.915Z"
+  },
+  {
+    "title": "STEP6-NETWORK-FAILURE",
+    "initialPid": 9008,
+    "hadReconnectBackoff": true,
+    "reconnectedAfterRecovery": false,
+    "noDuplicate": true,
+    "netOutSnippet": "[net-test] attempt 1\n[net-test] kicked {\"text\":\"ServerShutdown\"}\n[net-test] end socketClosed attempts 1\n[net-test] reconnect backoff 2000ms\n[net-test] attempt 2\nError: connect ECONNREFUSED 127.0.0.1:25693\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1638:16) {\n  errno: -4078,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '127.0.0.1',\n  port: 25693\n}\n[net-test] error connect ECONNREFUSED 127.0.0.1:25693\n[net-test] end socketClosed attempts 2\n[net-test] reconnect backoff 4000ms\n[net-test] attempt 3\n",
+    "at": "2026-09-03T17:27:43.460Z"
+  },
+  {
+    "title": "STEP7-RESOURCE-LIMIT",
+    "allowedFirst2": true,
+    "thirdBlocked": "User bot limit reached (2/2)",
+    "dashboard": {
+      "botsUsed": 2,
+      "botLimit": 2,
+      "executionCapacity": "2/10",
+      "resourceUsage": {
+        "userId": "res-test-user",
+        "botsUsed": 2,
+        "ramMbUsed": 512,
+        "cpuUsed": 0,
+        "storageMbUsed": 0,
+        "logBytes": 5242880
+      },
+      "limits": {
+        "maxBotsPerUser": 2,
+        "maxBotsGlobal": 10,
+        "maxRamPerBotMb": 512,
+        "maxCpuPerBot": 0.5,
+        "maxLogBytesPerBot": 10485760,
+        "maxStorageMb": 1024
+      }
+    },
+    "global": {
+      "globalBots": 2,
+      "limit": 10,
+      "executionCapacity": "2/10"
+    },
+    "enforced": true,
+    "note": "CPU/RAM enforcement via Governor + Container --memory=512m not enforced in SelfHosted without cgroups (see limitation)",
+    "at": "2026-09-03T17:27:44.269Z"
+  },
+  {
+    "title": "STEP7-GLOBAL-LIMIT",
+    "blockedReason": "Global capacity exhausted (1/1)",
+    "at": "2026-09-03T17:27:44.269Z"
+  },
+  {
+    "title": "STEP8-ISOLATION",
+    "botA_pid": 8612,
+    "botB_pid": 7720,
+    "envIsolation": "per-process BOT_ID env (verified)",
+    "processIsolation": "separate child_process (verified, kill A doesn't kill B)",
+    "fileIsolation": "NOT ENFORCED on SelfHosted (shared FS) - requires ContainerRunner with volume per bot",
+    "logIsolation": "streamLogs per botId (verified)",
+    "multiUser": "userA vs userB separate configs (verified via userId)",
+    "limitation": "Filesystem isolation requires ContainerRunner; SelfHosted provides process/env isolation only",
+    "at": "2026-09-03T17:27:44.275Z"
+  },
+  {
+    "title": "STEP9-SECRET",
+    "secretLeakInFrontend": false,
+    "secretLeakInLogs": false,
+    "secretLeakInConsole": false,
+    "secretLeakInAudit": false,
+    "encryptedBlobLength": 68,
+    "redactedSample": {
+      "username": "bot",
+      "password": "[REDACTED]",
+      "token": "[REDACTED]",
+      "apiKey": "[REDACTED]",
+      "credentialsRef": "[REDACTED]",
+      "normal": "hello"
+    },
+    "gitLeak": "checked .gitignore, no secret files",
+    "vault": "server-side only, not NEXT_PUBLIC_",
+    "at": "2026-09-03T17:27:44.890Z"
+  },
+  {
+    "title": "STEP10-PERSISTENCE",
+    "botSurvives": true,
+    "configSurvives": true,
+    "storageKeys": [
+      "snapshots/persist_1788456464890/config.json"
+    ],
+    "file": "C:\\Users\\redex\\Desktop\\زكاري\\tmp-persist.json",
+    "note": "MemoryAdapter alone is ephemeral (would lose on restart); persistent path requires Supabase PG + Storage (file snapshot proved). SelfHosted process is separate from API, so bot process survives API restart",
+    "at": "2026-09-03T17:27:44.891Z"
+  },
+  {
+    "title": "STEP10-EXECUTION-SURVIVES-API-RESTART",
+    "pid": 1928,
+    "note": "On real VPS, bot is systemd/docker, survives API restart; in test, process is child of Node but demonstrates separation",
+    "at": "2026-09-03T17:27:44.894Z"
+  },
+  {
+    "title": "STEP11-HONESTY",
+    "vercel": "ProviderNotSuitableError",
+    "workers": "ProviderNotSuitableError",
+    "supabase": "ProviderNotSuitableError",
+    "renderFree": "ProviderNotSuitableError",
+    "koyebFree": "ProviderNotSuitableError",
+    "noSilentFallback": true,
+    "at": "2026-09-03T17:27:44.895Z"
+  },
+  {
+    "title": "STEP12-FAILOVER",
+    "primary": "failing-primary failed",
+    "fallback": "self-hosted succeeded",
+    "botId": "failover_1788456464895",
+    "pid": 2228,
+    "noDuplicate": true,
+    "at": "2026-09-03T17:27:44.898Z"
+  },
+  {
+    "title": "STEP13-NO-MOCK",
+    "searchedTerms": [
+      "mock terminal",
+      "fake logs",
+      "simulated status",
+      "fake online",
+      "hardcoded process state",
+      "fake metrics",
+      "mocked provider success"
+    ],
+    "matches": [],
+    "productionMocks": "none",
+    "stubsAreExplicit": [
+      "ContainerRunner would start container (explicit stub, not fake success)",
+      "RemoteVPSRunner SSH start (stub)"
+    ],
+    "note": "Stubs are in production path but throw or log explicit 'would' - ContainerRunner.getStatus returns null (not fake). SelfHostedRunner is only real provider.",
+    "at": "2026-09-03T17:27:44.905Z"
+  },
+  {
+    "title": "CONTAINER-BLOCKED",
+    "provider": "container",
+    "healthy": false,
+    "error": "Docker unavailable — runtime BLOCKED (install Docker Desktop or use SelfHostedRunner)",
+    "classification": "BLOCKED",
+    "host": "Windows without Docker Desktop",
+    "note": "Real implementation exists (ContainerRunner.ts:9) but Docker not installed — install Docker Desktop or use SelfHostedRunner. Do not pretend passed.",
+    "inspectedCode": "import type { BotConfig, BotProcessState, ExecutionCapabilities, ExecutionProvider, HealthCheckResult } from \"../types.js\";\nimport { spawn, execSync } from \"node:child_process\";\nimport fs from \"node:fs\";\nimport path from \"node:path\";\n\n/**\n * ContainerRunner — REAL Docker implementation\n * Each bot g",
+    "at": "2026-09-03T17:31:39.963Z"
+  },
+  {
+    "title": "FS-ISOLATION",
+    "workdirA": "C:\\Users\\redex\\Desktop\\زكاري\\data\\bots\\isolFsA_1788456699964",
+    "workdirB": "C:\\Users\\redex\\Desktop\\زكاري\\data\\bots\\isolFsB_1788456699965",
+    "pidA": 8420,
+    "pidB": 4220,
+    "secretAInA": "secretA-0.",
+    "secretBInB": "secretB-0.",
+    "aListing": [
+      "bot.json",
+      "secret.txt"
+    ],
+    "bListing": [
+      "bot.json",
+      "secret.txt"
+    ],
+    "envIsolation": "BOT_ID per proc, CREDENTIALS_REF not shared",
+    "processIsolation": "separate child_process, kill A doesn't kill B (verified in multi-bot test)",
+    "networkPolicy": "per-bot no shared server connection (different serverHost)",
+    "limitation": "SelfHosted FS is directory-separated not kernel namespaced; ContainerRunner provides kernel isolation via mnt/net/pid namespaces",
+    "at": "2026-09-03T17:31:40.582Z"
+  },
+  {
+    "title": "ENV-ISOLATION",
+    "botA_env_BOT_ID": "isolFsA_1788456699964",
+    "botB_env_BOT_ID": "isolFsB_1788456699965",
+    "credentialsRefIsolated": true,
+    "at": "2026-09-03T17:31:40.582Z"
+  },
+  {
+    "title": "CPU-RAM-ENFORCEMENT",
+    "governor": "maxBotsPerUser 2 enforced, global 10, maxRamPerBot 512m, maxCpu 0.5",
+    "container": "BLOCKED — would enforce via --memory=512m --cpus=0.5 (verified when Docker available)",
+    "selfHosted": "logical Governor + OS rss check + per-bot workdir",
+    "at": "2026-09-03T17:31:40.586Z"
+  },
+  {
+    "title": "PERSISTENCE-BEFORE-RESTART",
+    "botId": "persistHost_1788456701810",
+    "dbPath": "C:\\Users\\redex\\Desktop\\زكاري\\data\\test-hardening-db.json",
+    "bots": 1,
+    "automations": 1,
+    "at": "2026-09-03T17:31:41.813Z"
+  },
+  {
+    "title": "PERSISTENCE-AFTER-BACKEND-RESTART",
+    "bot": {
+      "id": "persistHost_1788456701810",
+      "user_id": "userPersist",
+      "server_host": "persist.example.com",
+      "server_port": 25565,
+      "username": "persistBot",
+      "provider_id": "self-hosted",
+      "status": "running",
+      "config_ref": "vault:persist",
+      "created_at": "2026-09-03T17:31:41.810Z",
+      "updated_at": "2026-09-03T17:31:41.810Z"
+    },
+    "automations": 1,
+    "schedules": true,
+    "activities": 1,
+    "dbFileExists": true,
+    "registryExists": true,
+    "at": "2026-09-03T17:31:42.642Z"
+  },
+  {
+    "title": "HOST-RESTART-RECOVERY",
+    "oldPid": 5716,
+    "newPid": 1256,
+    "workdir": "C:\\Users\\redex\\Desktop\\زكاري\\data\\bots\\persistHost_1788456701810",
+    "restored": [
+      {
+        "botId": "persistHost_1788456701810",
+        "providerId": "self-hosted",
+        "status": "crashed",
+        "startedAt": "2026-09-03T17:31:42.642Z",
+        "lastHeartbeatAt": "2026-09-03T17:31:42.642Z",
+        "restartCount": 0,
+        "pid": 1256,
+        "lastError": "exit code null signal SIGTERM"
+      }
+    ],
+    "monitoringRestored": true,
+    "browserNotRequired": true,
+    "at": "2026-09-03T17:31:42.645Z"
+  },
+  {
+    "title": "MULTI-BOT-START",
+    "botA": "multiA_1788456703054",
+    "pidA": 8660,
+    "botB": "multiB_1788456703055",
+    "pidB": 284,
+    "statusA": "running",
+    "statusB": "running",
+    "at": "2026-09-03T17:31:43.575Z"
+  },
+  {
+    "title": "MULTI-BOT-KILL-A",
+    "botA_status": "crashed",
+    "botB_status": "running",
+    "botB_pid": 284,
+    "botA_lastError": "process not found (host restart?)",
+    "at": "2026-09-03T17:31:44.378Z"
+  },
+  {
+    "title": "MULTI-BOT-RECOVER-A",
+    "newPidA": 7512,
+    "bPidStill": 284,
+    "at": "2026-09-03T17:31:45.394Z"
+  },
+  {
+    "title": "MULTI-BOT-RESTART-B",
+    "newPidB": 7208,
+    "aPidStill": 7512,
+    "at": "2026-09-03T17:31:46.306Z"
+  },
+  {
+    "title": "DUPLICATE-PREVENTION",
+    "botId": "multiA_1788456703054",
+    "blocked": true,
+    "error": "Duplicate prevention: bot multiA_1788456703054 already running as PID 7512",
+    "activePid": 7512,
+    "at": "2026-09-03T17:31:46.306Z"
+  },
+  {
+    "title": "NO-DUPLICATE-INVARIANT",
+    "activePids": {
+      "multiA_1788456703054": 7512,
+      "multiB_1788456703055": 7208
+    },
+    "invariant": "ONE BOT = ONE ACTIVE RUNTIME",
+    "at": "2026-09-03T17:31:46.306Z"
+  },
+  {
+    "title": "MULTI-BOT-CLEANUP",
+    "stopped": [
+      "multiA_1788456703054",
+      "multiB_1788456703055"
+    ],
+    "at": "2026-09-03T17:31:47.117Z"
+  }
+]

@@ -1,0 +1,20 @@
+# Cloudflare Workers - Edge / API Layer ONLY
+# MUST NOT be used for persistent Minecraft bot processes
+# Free limits: 100k req/day, 10ms CPU per request -> orchestration, rate limiting, WAF, CDN only
+
+name = "minecraft-bot-edge"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+[vars]
+OPENOR_API_URL = "https://api.openor.internal"
+
+# Routes: browser -> Vercel -> Cloudflare -> Openor API
+# This worker does: DNS/WAF/CDN, rate limiting, request filtering, lightweight API, webhooks
+
+[[routes]]
+pattern = "api.mcbots.example/*"
+zone_name = "example.com"
+
+[observability]
+enabled = true
