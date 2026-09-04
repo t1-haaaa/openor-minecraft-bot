@@ -21,6 +21,7 @@
     "tsx": "^4.16.2"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
     "minecraft-protocol": "^1.54.0",
     "mineflayer": "^4.25.0"
   }

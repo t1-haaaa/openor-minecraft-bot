@@ -11,10 +11,8 @@ OPENOR_API_URL = "https://api.openor.internal"
 
 # Routes: browser -> Vercel -> Cloudflare -> Openor API
 # This worker does: DNS/WAF/CDN, rate limiting, request filtering, lightweight API, webhooks
-
-[[routes]]
-pattern = "api.mcbots.example/*"
-zone_name = "example.com"
+# NOTE: No custom zone configured yet — worker is deployed to workers.dev for edge verification
+# Production route requires Cloudflare zone (see PRODUCTION_TRUTH_REPORT.md)
 
 [observability]
 enabled = true

@@ -12,3 +12,5 @@ data/
 .opencode/
 *.tgz
 .vercel/
+.vercel
+.env*

@@ -1,0 +1,76 @@
+{
+  "generated": "2026-09-05T11:30Z",
+  "audit": {
+    "node": "22.23.2",
+    "npm": "10.9.8",
+    "vercel": "59.11.2 taha06999906-4327",
+    "supabase": "2.116.0 linked btpetqwjkpqbwwcirrwk ACTIVE_HEALTHY",
+    "wrangler": "4.129.0 taha06999906@gmail.com dbcf40e844663d8359dd1ba2de7eae8a",
+    "docker": null,
+    "wsl": null,
+    "gh": null
+  },
+  "blockers": [
+    {
+      "id": "supabase",
+      "status": "VERIFIED",
+      "previous": "BLOCKED — AUTH REQUIRED",
+      "now": "VERIFIED via login token sbp_fc96..., project btpetqwjkpqbwwcirrwk, 2 migrations, bucket bot-artifacts, 4 Hidden Secrets, CRUD+RLS tests passed",
+      "classification": "AUTO-FIXABLE (was CREDENTIAL REQUIRED, now fixed)",
+      "evidence": "npx supabase projects list → btpetqwjkpqbwwcirrwk, db push 2 migrations, supabase-verification.mjs all tests passed"
+    },
+    {
+      "id": "cloudflare-worker",
+      "status": "VERIFIED",
+      "classification": "AUTO-FIXABLE",
+      "evidence": "wrangler deploy Uploaded minecraft-bot-edge → https://minecraft-bot-edge.taha06999906.workers.dev Version 1168b3bd"
+    },
+    {
+      "id": "cloudflare-proxy-route",
+      "status": "BLOCKED",
+      "classification": "CREDENTIAL/USER ACTION REQUIRED (PAID INFRA REQUIRED if domain purchase)",
+      "reason": "No custom domain zone in account (GET /zones []), workers.dev external curl blocked by local network (TcpTestSucceeded False to 104.21.48.105), placeholder api.mcbots.example removed but no real domain to route. Need domain registration (e.g., openor-minecraft-bot.com) + DNS proxied + wrangler route.",
+      "evidence": "Test-NetConnection 104.21.48.105:443 → False, wrangler deploy without route succeeded"
+    },
+    {
+      "id": "production-execution-host",
+      "status": "BLOCKED",
+      "classification": "PAID INFRA REQUIRED",
+      "reason": "No persistent Linux VPS/Docker host available. Checked wsl, docker, podman, fly, gh, railway → all not recognized. Requires Linux VPS (Hetzner CX11 €4/mo, Fly Machine, DigitalOcean) with Docker, systemd, firewall, SSH hardening. Cannot be Vercel/Workers/Supabase/Render Free/Koyeb Free per spec.",
+      "evidence": "docker --version not recognized, wsl not recognized, ContainerRunner healthCheck → BLOCKED Docker unavailable honest"
+    },
+    {
+      "id": "container-runtime",
+      "status": "BLOCKED",
+      "classification": "PROVIDER BLOCKED (requires execution host)",
+      "reason": "Real ContainerRunner exists (docker run --memory=512m --cpus=0.5 --pids-limit=64) but Docker unavailable on current Windows host. Would be VERIFIED on Docker-capable host via docker inspect/stats.",
+      "evidence": "ContainerRunner.ts:9 real, healthCheck BLOCKED"
+    },
+    {
+      "id": "production-minecraft-runtime",
+      "status": "BLOCKED",
+      "classification": "PAID INFRA REQUIRED (depends on execution host + Supabase)",
+      "reason": "Local PID 7204 login runtimeBot_321 VERIFIED, but production chain Browser→Vercel→Cloudflare→API→Supabase→Execution Host→Docker→Bot broken at execution host. No prod bot process ID.",
+      "evidence": "Local runtime-verification 44 evidences, prod no host"
+    },
+    {
+      "id": "production-e2e",
+      "status": "PARTIALLY VERIFIED",
+      "classification": "CREDENTIAL REQUIRED (needs live Supabase + execution host for full flow)",
+      "reason": "Frontend loads GET https://openor-minecraft-bot.vercel.app → 200, /api/health → 200, but agent-browser full flow Login→Create→Start→Online→Console→Refresh→Close→Reopen not run (requires live Supabase auth + execution host for Online). Local E2E via hardening-verification VERIFIED.",
+      "evidence": "curl frontend 200, no agent-browser prod flow"
+    },
+    {
+      "id": "api-same-origin",
+      "status": "VERIFIED",
+      "classification": "AUTO-FIXABLE (fixed)",
+      "evidence": "NEXT_PUBLIC_OPENOR_API_URL → https://openor-minecraft-bot.vercel.app, GET /api/health → 200 0.85s without bypass"
+    },
+    {
+      "id": "vercel-frontend",
+      "status": "VERIFIED",
+      "classification": "NOT APPLICABLE",
+      "evidence": "dpl_5m4iSAb Ready, alias openor-minecraft-bot.vercel.app"
+    }
+  ]
+}
